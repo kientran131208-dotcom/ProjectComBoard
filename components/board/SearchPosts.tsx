@@ -22,7 +22,7 @@ const SearchPosts = ({ posts, onNavigate, onSelectPost }: SearchPostsProps) => {
   const displayPosts = useMemo(() => {
     if (query.trim() === "") return [];
     
-    return posts.filter(post => {
+    return posts.filter((post: any) => {
       const q = query.toLowerCase();
       
       // Matchers
@@ -100,8 +100,8 @@ const SearchPosts = ({ posts, onNavigate, onSelectPost }: SearchPostsProps) => {
               />
             </div>
 
-            <div className="flex flex-wrap gap-2">
-              {filters.map((f) => (
+            <div className=\"flex flex-wrap gap-2\">
+              {filters.map((f: any) => (
                 <button
                   key={f.id}
                   onClick={() => setActiveFilter(f.id)}
@@ -132,8 +132,8 @@ const SearchPosts = ({ posts, onNavigate, onSelectPost }: SearchPostsProps) => {
                 <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{t.search.searching}</p>
               </div>
             ) : (
-              <div className="divide-y-2 divide-black/5">
-                {displayPosts.map((post) => (
+              <div className=\"divide-y-2 divide-black/5\">
+                {displayPosts.map((post: any) => (
                   <button
                     key={post.id}
                     onClick={() => handleResultClick(post)}

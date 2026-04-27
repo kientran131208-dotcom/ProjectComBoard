@@ -76,7 +76,7 @@ export async function getUnreadCounts() {
   });
 
   const counts: Record<string, number> = {};
-  unreadMessages.forEach((item) => {
+  unreadMessages.forEach((item: any) => {
     counts[item.senderId] = item._count;
   });
 

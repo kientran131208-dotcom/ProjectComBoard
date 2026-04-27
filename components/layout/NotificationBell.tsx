@@ -52,7 +52,7 @@ export default function NotificationBell({ initialCount = 0 }: { initialCount: n
   const handleMarkRead = async (id: string) => {
     try {
       await markAsRead(id);
-      setNotifications(notifications.map(n => n.id === id ? { ...n, isRead: true } : n));
+      setNotifications(notifications.map((n: any) => n.id === id ? { ...n, isRead: true } : n));
       setUnreadCount(prev => Math.max(0, prev - 1));
     } catch (err) {
       console.error(err);
@@ -62,7 +62,7 @@ export default function NotificationBell({ initialCount = 0 }: { initialCount: n
   const handleMarkAllRead = async () => {
     try {
       await markAllAsRead();
-      setNotifications(notifications.map(n => ({ ...n, isRead: true })));
+      setNotifications(notifications.map((n: any) => ({ ...n, isRead: true })));
       setUnreadCount(0);
     } catch (err) {
       console.error(err);
@@ -107,7 +107,7 @@ export default function NotificationBell({ initialCount = 0 }: { initialCount: n
                 {t.header.noNotifications || "Không có thông báo nào"}
               </div>
             ) : (
-              notifications.map((notif) => (
+              notifications.map((notif: any) => (
                 <div 
                   key={notif.id}
                   className={`p-3 border-b border-cb-navy/10 flex gap-3 hover:bg-slate-50 transition-colors relative group ${!notif.isRead ? 'bg-blue-50/50' : ''}`}

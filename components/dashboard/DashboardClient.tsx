@@ -75,12 +75,12 @@ export default function DashboardClient({
   const [publicSearchQuery, setPublicSearchQuery] = useState("");
   const router = useRouter();
 
-  const filteredPublicBoards = publicBoards.filter(board => 
+  const filteredPublicBoards = publicBoards.filter((board: any) => 
     board.name.toLowerCase().includes(publicSearchQuery.toLowerCase()) ||
     board.description?.toLowerCase().includes(publicSearchQuery.toLowerCase())
   );
 
-  const adminBoards = displayBoards.filter(board => board.members?.[0]?.role === "ADMIN");
+  const adminBoards = displayBoards.filter((board: any) => board.members?.[0]?.role === "ADMIN");
 
 
   const handleJoinBoard = async (e: React.FormEvent) => {

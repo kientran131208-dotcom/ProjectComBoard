@@ -74,13 +74,13 @@ export async function createPost(data: {
 
       // 3. Create notifications in bulk (Prisma 5.x+)
       await prisma.notification.createMany({
-        data: members.map(m => ({
-          userId: m.userId,
-          boardId: data.boardId,
-          postId: newPost.id,
-          type: notifType,
-          content: fullContent,
-        }))
+          data: members.map((m: any) => ({
+            userId: m.userId,
+            boardId: data.boardId,
+            postId: newPost.id,
+            type: notifType,
+            content: fullContent,
+          }))
       });
     }
   } catch (err) {

@@ -122,11 +122,11 @@ export default function PostDetailModal({
   const isAuthor = post.authorId === currentUserId;
   const canModify = isAuthor || isAdmin;
 
-  const isLiked = post.likes?.some(like => like.userId === currentUserId);
+  const isLiked = post.likes?.some((like: any) => like.userId === currentUserId);
 
   // Group comments: top-level and replies (filtering out optimistically deleted ones)
-  const topLevelComments = post.comments?.filter(c => !c.parentId && !deletedIds.includes(c.id)) || [];
-  const getReplies = (parentId: string) => post.comments?.filter(c => c.parentId === parentId && !deletedIds.includes(c.id)) || [];
+  const topLevelComments = post.comments?.filter((c: any) => !c.parentId && !deletedIds.includes(c.id)) || [];
+  const getReplies = (parentId: string) => post.comments?.filter((c: any) => c.parentId === parentId && !deletedIds.includes(c.id)) || [];
 
   const handleLike = async () => {
     if (!currentUserId || isLiking) return;
@@ -176,7 +176,7 @@ export default function PostDetailModal({
         title: editTitle.trim() || post.title, 
         content: editContent.trim() || post.content,
         status: editStatus,
-        ...(post.type === "POLL" ? { pollOptions: editPollOptions.filter(o => o.trim() !== '') } : {})
+        ...(post.type === \"POLL\" ? { pollOptions: editPollOptions.filter((o: any) => o.trim() !== '') } : {})
       });
     }
     setIsEditing(false);
@@ -367,7 +367,7 @@ export default function PostDetailModal({
                       { value: "OPEN", label: t.status.waiting },
                       { value: "IN_PROGRESS", label: t.status.inProgress },
                       { value: "DONE", label: t.status.completed }
-                    ].map((s) => (
+                    ].map((s: any) => (
                       <button
                         key={s.value}
                         type="button"
@@ -589,8 +589,8 @@ export default function PostDetailModal({
             {post.likes && post.likes.length > 0 && (
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-4">
-                  <div className="flex -space-x-3 overflow-hidden p-1">
-                    {post.likes.slice(0, 5).map((like, i) => (
+                  <div className=\"flex -space-x-3 overflow-hidden p-1\">
+                    {post.likes.slice(0, 5).map((like: any, i: number) => (
                       <div 
                         key={like.userId} 
                         className="inline-block h-8 w-8 rounded-full border-2 border-black bg-white overflow-hidden shadow-[2px_2px_0_0_#1A1A2E]"
@@ -630,9 +630,9 @@ export default function PostDetailModal({
               </h4>
 
               {topLevelComments.length > 0 ? (
-                topLevelComments.map((comment) => {
+                topLevelComments.map((comment: any) => {
                   const replies = getReplies(comment.id);
-                  const isCommentLiked = comment.commentLikes?.some(l => l.userId === currentUserId);
+                  const isCommentLiked = comment.commentLikes?.some((l: any) => l.userId === currentUserId);
                   const canDeleteComment = (comment.authorId && String(comment.authorId) === String(currentUserId)) || isAdmin;
                   
                   return (
@@ -704,8 +704,8 @@ export default function PostDetailModal({
                       {/* Replies List */}
                       {replies.length > 0 && (
                         <div className="ml-14 space-y-4 border-l-2 border-dashed border-black/10 pl-6">
-                          {replies.map((reply) => {
-                            const isReplyLiked = reply.commentLikes?.some(l => l.userId === currentUserId);
+                          {replies.map((reply: any) => {
+                            const isReplyLiked = reply.commentLikes?.some((l: any) => l.userId === currentUserId);
                             const canDeleteReply = (reply.authorId && String(reply.authorId) === String(currentUserId)) || isAdmin;
                             
                             return (

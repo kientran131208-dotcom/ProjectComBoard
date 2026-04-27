@@ -65,7 +65,7 @@ export default function CreatePostModal({
         content: finalContent,
         image: formData.image || undefined,
         link: formData.link || undefined,
-        pollOptions: mode === "POLL" ? pollOptions.filter(o => o.trim() !== "") : undefined,
+        pollOptions: mode === \"POLL\" ? pollOptions.filter((o: any) => o.trim() !== \"\") : undefined,
         type: mode === "POLL" ? "POLL" : formData.type,
         status: formData.status,
         x: initialX,
@@ -105,7 +105,7 @@ export default function CreatePostModal({
                 { type: 'ANNOUNCEMENT', icon: Megaphone, label: t.types.announcement, color: 'bg-[#F9D478]' },
                 { type: 'BORROWING', icon: RefreshCcw, label: t.types.borrowing, color: 'bg-[#7BEEB3]' },
                 { type: 'QNA', icon: HelpCircle, label: t.types.qna, color: 'bg-[#D9D7FF]' },
-              ].map((item) => (
+              ].map((item: any) => (
                 <button 
                   key={item.type}
                   onClick={() => setFormData({ ...formData, type: item.type as any })}
@@ -138,8 +138,8 @@ export default function CreatePostModal({
                 </div>
 
                 <div className="space-y-3">
-                  <label className="block text-xs font-black uppercase text-[#1A1A2E] mb-2 tracking-widest text-[#F24236]">{t.modals.createPost.options}</label>
-                  {pollOptions.map((option, idx) => (
+                  <label className=\"block text-xs font-black uppercase text-[#1A1A2E] mb-2 tracking-widest text-[#F24236]\">{t.modals.createPost.options}</label>
+                  {pollOptions.map((option: any, idx: number) => (
                     <div key={idx} className="flex gap-2">
                       <input 
                         type="text" 
@@ -154,7 +154,7 @@ export default function CreatePostModal({
                       />
                       {pollOptions.length > 2 && (
                         <button 
-                          onClick={() => setPollOptions(pollOptions.filter((_, i) => i !== idx))}
+                          onClick={() => setPollOptions(pollOptions.filter((_: any, i: number) => i !== idx))}
                           className="bg-white border-2 border-black p-2 hover:bg-red-50 text-red-500"
                         >
                           <X size={16} />
@@ -337,9 +337,9 @@ export default function CreatePostModal({
             <div className="flex gap-2">
               {[
                 { value: "OPEN", label: t.status.waiting },
-                { value: "IN_PROGRESS", label: t.status.inProgress },
-                { value: "DONE", label: t.status.completed }
-              ].map((s) => (
+                { value: \"IN_PROGRESS\", label: t.status.inProgress },
+                { value: \"DONE\", label: t.status.completed }
+              ].map((s: any) => (
                 <button
                   key={s.value}
                   type="button"
@@ -369,9 +369,9 @@ export default function CreatePostModal({
             onClick={handleSubmit}
             disabled={loading || 
               (mode === "ANNOUNCEMENT" && (!formData.title || !formData.content)) || 
-              (mode === "IMAGE" && !formData.image) || 
-              (mode === "LINK" && !formData.link) || 
-              (mode === "POLL" && (!formData.title || pollOptions.filter(o => o.trim() !== "").length < 2))}
+              (mode === \"IMAGE\" && !formData.image) || 
+              (mode === \"LINK\" && !formData.link) || 
+              (mode === \"POLL\" && (!formData.title || pollOptions.filter((o: any) => o.trim() !== \"\").length < 2))}
             className="bg-[#b71212] border-2 border-black px-8 py-3 text-white font-headline font-bold text-sm shadow-[4px_4px_0_0_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 hover:bg-[#a00f0f] disabled:opacity-50 disabled:grayscale"
           >
             {loading ? <RefreshCcw className="animate-spin" size={18} /> : 

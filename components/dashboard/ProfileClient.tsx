@@ -35,8 +35,8 @@ export default function ProfileClient({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  const adminBoards = myBoards.filter(b => b.members?.[0]?.role === "ADMIN");
-  const memberBoards = myBoards.filter(b => b.members?.[0]?.role === "MEMBER");
+  const adminBoards = myBoards.filter((b: any) => b.members?.[0]?.role === \"ADMIN\");
+  const memberBoards = myBoards.filter((b: any) => b.members?.[0]?.role === \"MEMBER\");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -182,7 +182,7 @@ export default function ProfileClient({
                 </div>
 
                 <div className="space-y-4">
-                  {adminBoards.length > 0 ? adminBoards.map(board => (
+                  {adminBoards.length > 0 ? adminBoards.map((board: any) => (
                     <Link key={board.id} href={`/board/${board.id}`}>
                       <div className="bg-white border-2 border-black p-4 shadow-[4px_4px_0_0_#000] hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#000] transition-all flex items-center justify-between group mb-3">
                         <div className="flex items-center gap-4">
@@ -216,7 +216,7 @@ export default function ProfileClient({
                 </div>
 
                 <div className="space-y-4">
-                  {memberBoards.length > 0 ? memberBoards.map(board => (
+                  {memberBoards.length > 0 ? memberBoards.map((board: any) => (
                     <Link key={board.id} href={`/board/${board.id}`}>
                       <div className="bg-white border-2 border-black p-4 shadow-[4px_4px_0_0_#000] hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#000] transition-all flex items-center justify-between group mb-3">
                         <div className="flex items-center gap-4">

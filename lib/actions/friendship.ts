@@ -91,7 +91,7 @@ export async function getFriends() {
     }
   });
 
-  return friendships.map(f => f.friend);
+  return friendships.map((f: any) => f.friend);
 }
 
 export async function getPendingRequests() {
