@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cb-red: #F24236;
+  --color-cb-yellow: #f9cc61;
+  --color-cb-mint: #06D6A0;
+  --color-cb-blue: #118AB2;
+  --color-cb-navy: #1A1A2E;
+  --color-cb-bg: #f8f5ff;
+  --color-cb-surface: #ffffff;
+  --color-cb-text: #2d2d42;
+  --color-cb-tertiary: #00694c;
+  --color-cb-tertiary-container: #45f2b9;
+  
+  --shadow-hard: 4px 4px 0px #000000;
+  --shadow-hard-navy: 4px 4px 0px #1A1A2E;
+  --shadow-hard-lg: 8px 8px 0px #000000;
+  --shadow-hard-navy-lg: 8px 8px 0px #1A1A2E;
+
+  --color-cb-surface-container-highest: #dbd9ff;
+  --color-cb-surface-container-high: #e2dfff;
+  --color-cb-surface-container-low: #f2efff;
+  --color-cb-surface-container-lowest: #ffffff;
+  --color-cb-on-surface-variant: #5a5971;
+  --color-cb-outline-variant: #acaac5;
+
+  --font-plus-jakarta: var(--font-plus-jakarta), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+}
+
+@layer utilities {
+  .dot-pattern {
+    background-image: radial-gradient(rgba(90, 89, 113, 0.05) 2px, transparent 2px);
+    background-size: 20px 20px;
+  }
+  .neo-shadow {
+    box-shadow: 4px 4px 0px #1A1A2E;
+  }
+  .neo-shadow-sm {
+    box-shadow: 2px 2px 0px #1A1A2E;
+  }
+  .neo-shadow-button {
+    box-shadow: 3px 3px 0px #1A1A2E;
+  }
+  .neo-border {
+    border: 2px solid #1A1A2E;
+  }
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s infinite ease-in-out;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f5ff;
+  background-image: radial-gradient(rgba(90, 89, 113, 0.05) 2px, transparent 2px);
+  background-size: 20px 20px;
+  color: #2d2d42;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f5ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #f9cc61;
+  border-radius: 4px;
+  border: 2px solid #1a1a2e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F24236;
+}
+
+.font-headline {
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Post Card Effects */
+.post-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.post-card:hover {
+  --rotation: 0deg !important;
+  z-index: 500 !important;
+}
+

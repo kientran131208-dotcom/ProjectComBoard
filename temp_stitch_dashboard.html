@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComBoard - Cộng đồng của tôi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#eabe55",
+                      "on-tertiary-container": "#00563e",
+                      "on-secondary-fixed": "#443100",
+                      "on-primary": "#ffefed",
+                      "background": "#f8f5ff",
+                      "on-error-container": "#510017",
+                      "surface-tint": "#b71212",
+                      "surface-container-high": "#e2dfff",
+                      "tertiary": "#00694c",
+                      "surface-bright": "#f8f5ff",
+                      "on-secondary-container": "#5b4400",
+                      "on-surface": "#2d2d42",
+                      "tertiary-container": "#45f2b9",
+                      "on-error": "#ffefef",
+                      "inverse-primary": "#ff5446",
+                      "inverse-surface": "#0c0c1f",
+                      "surface-container": "#e8e5ff",
+                      "secondary-fixed": "#f9cc61",
+                      "primary-fixed-dim": "#ff5b4c",
+                      "error-container": "#f74b6d",
+                      "on-primary-container": "#4f0002",
+                      "error": "#b41340",
+                      "outline": "#75748d",
+                      "on-primary-fixed-variant": "#610002",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-dim": "#a40008",
+                      "secondary-dim": "#664c00",
+                      "tertiary-dim": "#005b42",
+                      "on-primary-fixed": "#000000",
+                      "primary-container": "#ff7767",
+                      "tertiary-fixed": "#45f2b9",
+                      "primary-fixed": "#ff7767",
+                      "on-background": "#2d2d42",
+                      "surface-container-low": "#f2efff",
+                      "on-tertiary-fixed-variant": "#006046",
+                      "secondary": "#745700",
+                      "inverse-on-surface": "#9c9ab4",
+                      "outline-variant": "#acaac5",
+                      "tertiary-fixed-dim": "#2de3ac",
+                      "on-secondary-fixed-variant": "#674d00",
+                      "surface-container-highest": "#dbd9ff",
+                      "secondary-container": "#f9cc61",
+                      "surface": "#f8f5ff",
+                      "error-dim": "#a70138",
+                      "on-tertiary-fixed": "#00412e",
+                      "surface-dim": "#d3d1f8",
+                      "on-secondary": "#fff1da",
+                      "surface-variant": "#dbd9ff",
+                      "on-tertiary": "#c7ffe4",
+                      "primary": "#b71212",
+                      "on-surface-variant": "#5a5971"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans", "sans-serif"],
+                      "body": ["Inter", "sans-serif"],
+                      "label": ["Inter", "sans-serif"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f5ff;
+            background-image: radial-gradient(rgba(90, 89, 113, 0.05) 2px, transparent 2px);
+            background-size: 20px 20px;
+        }
+        .memphis-shadow-btn {
+            box-shadow: 4px 4px 0px #000000;
+        }
+        .memphis-shadow-btn:active {
+            box-shadow: 2px 2px 0px #000000;
+            transform: translate(2px, 2px);
+        }
+        .memphis-shadow-card {
+            box-shadow: 4px 4px 0px #1A1A2E;
+        }
+        .memphis-pattern-zigzag {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(26, 26, 46, 0.1) 10px, rgba(26, 26, 46, 0.1) 20px);
+        }
+        .memphis-pattern-dots {
+            background-image: radial-gradient(rgba(26, 26, 46, 0.15) 2px, transparent 2px);
+            background-size: 12px 12px;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased min-h-screen relative pb-24 md:pb-0">
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-zinc-900 border-b-2 border-black dark:border-zinc-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black italic tracking-tighter text-[#F24236] font-['Plus_Jakarta_Sans']">ComBoard</span>
+</div>
+<div class="hidden md:flex flex-1 justify-center">
+<h1 class="font-headline font-bold text-lg text-on-surface">Cộng đồng của tôi</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-on-surface hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors rounded-full border-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-1 right-1 w-4 h-4 bg-[#F24236] text-white text-[10px] font-bold flex items-center justify-center rounded-full border border-black">3</span>
+</button>
+<div class="flex items-center gap-2 cursor-pointer p-1 pr-2 rounded-full border-2 border-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<img alt="User avatar" class="w-8 h-8 rounded-full border-2 border-black object-cover" data-alt="Portrait of young woman with dark hair against plain background, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhroIcGvuJUMSEpEbgv-Osv3eoKVIQavy2j59GUwsQ8LW6yD27WjliAYw4fmw-dywZ6Gc38LUxQjuW7KO-UdNTQKvKg2vpCOOyuMjLwPxpS5iphf56lIP5JaDed0F2-vuLu1wcn6_gozvXW27ygn8YikXAjdcEHmMH88dESC5K906ql_NemCw9zFeKaVx__FznIFKyKlw9H3CYqj9xjO4oWwfrvtLw1-B11eBd7cuMwk9PPl6oe4EyfR5xKI6DQ2kCqbnff4BZlgwj"/>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Banner -->
+<section class="bg-[#1A1A2E] rounded-xl border-2 border-black p-8 relative overflow-hidden mb-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col md:flex-row justify-between items-center min-h-[160px]">
+<!-- Decorative Memphis Shapes -->
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-fixed rounded-full border-2 border-black opacity-80 mix-blend-screen"></div>
+<div class="absolute right-32 top-8 w-0 h-0 border-l-[30px] border-l-transparent border-b-[50px] border-b-[#F24236] border-r-[30px] border-r-transparent transform rotate-12 opacity-90"></div>
+<div class="absolute left-1/2 top-0 w-32 h-full memphis-pattern-dots opacity-20 pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl text-left">
+<h2 class="font-headline font-bold text-3xl md:text-4xl text-white mb-2">Xin chào, Minh Anh! 👋</h2>
+<p class="font-body text-[15px] text-white/70">Bạn đang tham gia 3 cộng đồng. Có 12 thông báo mới chờ bạn.</p>
+</div>
+<div class="relative z-10 mt-6 md:mt-0 self-end md:self-auto">
+<button class="bg-[#F24236] border-2 border-white rounded-lg w-12 h-12 flex items-center justify-center text-white transition-all active:translate-x-[2px] active:translate-y-[2px] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] active:shadow-none">
+<span class="material-symbols-outlined text-2xl font-bold">add</span>
+</button>
+</div>
+</section>
+<!-- Section 1: My Boards -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<h3 class="font-headline font-bold text-xl uppercase tracking-wider relative inline-block">
+                    Bảng của tôi
+                    <div class="absolute bottom-1 left-0 w-full h-3 bg-secondary-fixed -z-10 transform -skew-x-12"></div>
+</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border-2 border-black rounded-xl overflow-hidden memphis-shadow-card flex flex-col group relative">
+<!-- Bookmark Shape -->
+<div class="absolute top-0 right-0 w-8 h-8 bg-tertiary border-l-2 border-b-2 border-black rounded-bl-lg z-10"></div>
+<div class="h-20 bg-secondary-container border-b-2 border-black memphis-pattern-zigzag flex items-center justify-center text-4xl">
+                        🏘️
+                    </div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Khu Dân Cư Sunrise City</h4>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tertiary-container border-2 border-black text-on-tertiary-container">
+                                Đang hoạt động
+                            </span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2 flex-grow">
+                            Bảng tin chính thức cho cư dân Sunrise City. Cập nhật thông báo ban quản lý và giao lưu cộng đồng.
+                        </p>
+<div class="flex items-center gap-2 text-xs font-medium text-outline mb-4">
+<span class="material-symbols-outlined text-base">group</span>
+                            47 thành viên
+                            <span class="px-1">•</span>
+                            12 bài mới
+                        </div>
+<button class="w-full bg-primary border-2 border-black rounded-lg py-2.5 px-4 text-on-primary font-headline font-bold text-sm memphis-shadow-btn transition-all flex items-center justify-center gap-2">
+                            Truy cập
+                            <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border-2 border-black rounded-xl overflow-hidden memphis-shadow-card flex flex-col group relative">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary-fixed border-l-2 border-b-2 border-black rounded-bl-lg z-10"></div>
+<div class="h-20 bg-tertiary-container border-b-2 border-black memphis-pattern-dots flex items-center justify-center text-4xl">
+                        🏢
+                    </div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Chung Cư The Light</h4>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-container border-2 border-black text-on-secondary-container">
+                                Mới cập nhật
+                            </span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2 flex-grow">
+                            Trao đổi mua bán, chia sẻ kinh nghiệm sống tại chung cư The Light.
+                        </p>
+<div class="flex items-center gap-2 text-xs font-medium text-outline mb-4">
+<span class="material-symbols-outlined text-base">group</span>
+                            128 thành viên
+                            <span class="px-1">•</span>
+                            5 bài mới
+                        </div>
+<button class="w-full bg-primary border-2 border-black rounded-lg py-2.5 px-4 text-on-primary font-headline font-bold text-sm memphis-shadow-btn transition-all flex items-center justify-center gap-2">
+                            Truy cập
+                            <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest border-2 border-black rounded-xl overflow-hidden memphis-shadow-card flex flex-col group relative">
+<div class="absolute top-0 right-0 w-8 h-8 bg-primary border-l-2 border-b-2 border-black rounded-bl-lg z-10"></div>
+<div class="h-20 bg-[#118AB2] border-b-2 border-black memphis-pattern-zigzag flex items-center justify-center text-4xl">
+                        🏫
+                    </div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-headline font-bold text-lg text-on-surface leading-tight">Hội Phụ Huynh Trường ABC</h4>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-surface-container-high border-2 border-black text-on-surface">
+                                Ít tương tác
+                            </span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2 flex-grow">
+                            Nhóm dành riêng cho phụ huynh học sinh trường tiểu học ABC niên khóa 2023-2024.
+                        </p>
+<div class="flex items-center gap-2 text-xs font-medium text-outline mb-4">
+<span class="material-symbols-outlined text-base">group</span>
+                            34 thành viên
+                            <span class="px-1">•</span>
+                            0 bài mới
+                        </div>
+<button class="w-full bg-primary border-2 border-black rounded-lg py-2.5 px-4 text-on-primary font-headline font-bold text-sm memphis-shadow-btn transition-all flex items-center justify-center gap-2">
+                            Truy cập
+                            <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component) - Mobile Only -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white dark:bg-zinc-900 md:hidden border-t-2 border-black rounded-t-lg shadow-[0px_-4px_0px_0px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-400 px-4 py-1 hover:text-[#F24236] transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-400 px-4 py-1 hover:text-[#F24236] transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-[10px] uppercase tracking-widest mt-1">Discover</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center bg-[#F24236] text-white rounded-md border-2 border-black px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-[10px] uppercase tracking-widest mt-1">Boards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-400 px-4 py-1 hover:text-[#F24236] transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

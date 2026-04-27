@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComBoard - Create New Board</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-highest": "#dbd9ff",
+                  "on-surface-variant": "#5a5971",
+                  "tertiary-fixed-dim": "#2de3ac",
+                  "secondary-fixed": "#f9cc61",
+                  "surface-container-high": "#e2dfff",
+                  "surface-bright": "#f8f5ff",
+                  "on-primary-fixed": "#000000",
+                  "secondary-dim": "#664c00",
+                  "primary-fixed": "#ff7767",
+                  "primary-fixed-dim": "#ff5b4c",
+                  "surface": "#f8f5ff",
+                  "error-dim": "#a70138",
+                  "surface-variant": "#dbd9ff",
+                  "secondary": "#745700",
+                  "on-surface": "#2d2d42",
+                  "on-secondary": "#fff1da",
+                  "surface-container-low": "#f2efff",
+                  "tertiary-dim": "#005b42",
+                  "on-tertiary-fixed-variant": "#006046",
+                  "outline-variant": "#acaac5",
+                  "tertiary-container": "#45f2b9",
+                  "on-tertiary-container": "#00563e",
+                  "secondary-container": "#f9cc61",
+                  "error-container": "#f74b6d",
+                  "surface-dim": "#d3d1f8",
+                  "tertiary-fixed": "#45f2b9",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-fixed": "#00412e",
+                  "on-background": "#2d2d42",
+                  "on-tertiary": "#c7ffe4",
+                  "tertiary": "#00694c",
+                  "outline": "#75748d",
+                  "background": "#f8f5ff",
+                  "on-secondary-container": "#5b4400",
+                  "surface-tint": "#b71212",
+                  "primary": "#b71212",
+                  "on-primary": "#ffefed",
+                  "on-primary-fixed-variant": "#610002",
+                  "on-error-container": "#510017",
+                  "on-secondary-fixed": "#443100",
+                  "inverse-primary": "#ff5446",
+                  "secondary-fixed-dim": "#eabe55",
+                  "on-primary-container": "#4f0002",
+                  "inverse-surface": "#0c0c1f",
+                  "primary-dim": "#a40008",
+                  "inverse-on-surface": "#9c9ab4",
+                  "surface-container": "#e8e5ff",
+                  "error": "#b41340",
+                  "primary-container": "#ff7767",
+                  "on-error": "#ffefef",
+                  "on-secondary-fixed-variant": "#674d00"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {},
+          "fontFamily": {
+                  "headline": [
+                          "Plus Jakarta Sans"
+                  ],
+                  "body": [
+                          "Inter"
+                  ],
+                  "label": [
+                          "Inter"
+                  ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .memphis-shadow { box-shadow: 4px 4px 0px #000000; }
+    .memphis-shadow-hover:hover { box-shadow: 2px 2px 0px #000000; transform: translate(2px, 2px); }
+    .memphis-shadow-lg { box-shadow: 8px 8px 0px #000000; }
+    .bg-polka { background-image: radial-gradient(#acaac5 1px, transparent 1px); background-size: 16px 16px; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen relative font-body overflow-hidden">
+<!-- Background Layer (Blurred Screen) -->
+<div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80')] bg-cover bg-center blur-md scale-105" data-alt="vibrant abstract gradient background with soft yellow pink and blue hues"></div>
+<!-- Dark Overlay -->
+<div class="absolute inset-0 z-10 bg-[#1A1A2E] bg-opacity-75 backdrop-blur-sm flex items-center justify-center p-4">
+<!-- Modal Container -->
+<div class="relative w-full max-w-[580px] bg-surface-container-lowest border-2 border-on-surface rounded-xl memphis-shadow-lg flex flex-col max-h-[921px] z-20">
+<!-- Memphis Decorative Element -->
+<div class="absolute -top-3 -right-3 w-10 h-10 bg-secondary-container border-2 border-on-surface transform rotate-12 z-30 flex items-center justify-center memphis-shadow" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+<!-- Modal Header -->
+<div class="p-6 border-b-2 border-on-surface relative shrink-0 bg-surface-container-low rounded-t-xl">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline font-bold text-2xl text-on-surface flex items-center gap-2">
+<span class="text-3xl">🎉</span> Tạo bảng mới
+            </h2>
+<p class="text-sm text-on-surface-variant mt-1">Thiết lập không gian thông báo cho cộng đồng của bạn</p>
+</div>
+<button class="w-8 h-8 rounded-full border-2 border-on-surface flex items-center justify-center bg-surface-container-lowest memphis-shadow memphis-shadow-hover transition-all">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Decorative Zigzag -->
+<div class="absolute bottom-0 left-6 right-6 h-1 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI0Ij48cGF0aCBkPSJNMCAwbDUgNCA1LTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y5Y2M2MSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+')] translate-y-[2px]"></div>
+</div>
+<!-- Step Indicator -->
+<div class="px-8 py-5 border-b-2 border-surface-container bg-surface-bright shrink-0">
+<div class="flex items-center justify-between relative">
+<!-- Connecting Line -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 border-t-2 border-dashed border-outline-variant z-0"></div>
+<!-- Step 1 (Active) -->
+<div class="relative z-10 flex flex-col items-center gap-2 bg-surface-bright px-2">
+<div class="w-8 h-8 rounded-full border-2 border-on-surface bg-primary text-on-primary flex items-center justify-center font-bold memphis-shadow">1</div>
+<span class="text-xs font-bold text-primary">Thông tin cơ bản</span>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center gap-2 bg-surface-bright px-2">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container-low text-on-surface-variant flex items-center justify-center font-bold">2</div>
+<span class="text-xs font-semibold text-on-surface-variant">Phân loại</span>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center gap-2 bg-surface-bright px-2">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container-low text-on-surface-variant flex items-center justify-center font-bold">3</div>
+<span class="text-xs font-semibold text-on-surface-variant">Thành viên</span>
+</div>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="p-6 overflow-y-auto flex-1 space-y-8 bg-surface bg-polka">
+<!-- Field 1: Icon/Avatar -->
+<div>
+<label class="block text-sm font-bold text-on-surface mb-3">Ảnh đại diện bảng</label>
+<div class="flex gap-6 items-start">
+<div class="w-40 h-40 border-2 border-dashed border-on-surface bg-surface-container-low flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2">photo_camera</span>
+<span class="text-xs font-semibold text-on-surface-variant">Tải ảnh lên</span>
+</div>
+<div class="flex-1">
+<p class="text-xs text-on-surface-variant mb-3 font-semibold">Hoặc chọn biểu tượng:</p>
+<div class="grid grid-cols-3 gap-3">
+<button class="h-12 border-2 border-on-surface bg-secondary-container memphis-shadow flex items-center justify-center text-xl">🏘️</button>
+<button class="h-12 border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center text-xl opacity-70 hover:opacity-100 transition-opacity">🏢</button>
+<button class="h-12 border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center text-xl opacity-70 hover:opacity-100 transition-opacity">🏫</button>
+<button class="h-12 border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center text-xl opacity-70 hover:opacity-100 transition-opacity">🌆</button>
+<button class="h-12 border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center text-xl opacity-70 hover:opacity-100 transition-opacity">👨‍👩‍👧</button>
+<button class="h-12 border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center text-xl opacity-70 hover:opacity-100 transition-opacity">🎯</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Field 2: Name -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<label class="block text-sm font-bold text-on-surface">Tên bảng *</label>
+<span class="text-xs font-semibold text-on-surface-variant">22/60</span>
+</div>
+<input class="w-full h-[52px] px-4 bg-surface-container-lowest border-2 border-primary text-on-surface font-semibold focus:outline-none focus:ring-0 memphis-shadow transition-shadow" placeholder="Nhập tên bảng..." type="text" value="Khu Dân Cư Sunrise City"/>
+</div>
+<!-- Field 3: Description -->
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">Mô tả ngắn</label>
+<textarea class="w-full h-[100px] p-4 bg-surface-container-lowest border-2 border-on-surface text-on-surface font-semibold focus:outline-none focus:border-primary focus:memphis-shadow transition-all resize-none" placeholder="Giới thiệu mục đích của bảng này..."></textarea>
+</div>
+<!-- Field 4: Color -->
+<div>
+<label class="block text-sm font-bold text-on-surface mb-3">Màu chủ đề</label>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border-2 border-on-surface bg-secondary-fixed memphis-shadow scale-110 transition-transform relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMSkiLz48L3N2Zz4=')]"></div>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-on-surface bg-tertiary-container hover:scale-110 transition-transform relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMSkiLz48L3N2Zz4=')]"></div>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-on-surface bg-primary hover:scale-110 transition-transform relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMSkiLz48L3N2Zz4=')]"></div>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-on-surface bg-[#118AB2] hover:scale-110 transition-transform relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMSkiLz48L3N2Zz4=')]"></div>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-on-surface bg-[#1A1A2E] hover:scale-110 transition-transform relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMSkiLz48L3N2Zz4=')]"></div>
+</button>
+</div>
+</div>
+<!-- Field 5: Privacy -->
+<div>
+<label class="block text-sm font-bold text-on-surface mb-3">Quyền riêng tư</label>
+<div class="grid grid-cols-2 gap-4">
+<button class="h-14 border-2 border-on-surface bg-secondary-container memphis-shadow flex items-center justify-center gap-2 font-bold text-on-surface">
+<span>🌐</span> Công khai
+            </button>
+<button class="h-14 border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center gap-2 font-semibold text-on-surface-variant hover:border-on-surface hover:text-on-surface transition-colors">
+<span>🔒</span> Riêng tư
+            </button>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 border-t-2 border-on-surface bg-surface-container-low shrink-0 flex justify-between items-center rounded-b-xl">
+<button class="px-6 py-3 border-2 border-on-surface bg-surface-container-lowest text-on-surface font-bold rounded-sm memphis-shadow memphis-shadow-hover transition-all">
+          Hủy
+        </button>
+<button class="px-6 py-3 border-2 border-on-surface bg-primary text-on-primary font-bold rounded-sm memphis-shadow memphis-shadow-hover transition-all flex items-center gap-2">
+          Tiếp theo <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

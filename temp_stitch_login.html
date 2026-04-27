@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComBoard - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#2d2d42",
+                        "on-primary-fixed": "#000000",
+                        "inverse-surface": "#0c0c1f",
+                        "on-tertiary-fixed-variant": "#006046",
+                        "tertiary-container": "#45f2b9",
+                        "primary-fixed": "#ff7767",
+                        "on-secondary-fixed-variant": "#674d00",
+                        "outline": "#75748d",
+                        "primary-fixed-dim": "#ff5b4c",
+                        "surface": "#f8f5ff",
+                        "tertiary-fixed-dim": "#2de3ac",
+                        "secondary-container": "#f9cc61",
+                        "surface-container-low": "#f2efff",
+                        "primary-dim": "#a40008",
+                        "primary-container": "#ff7767",
+                        "on-primary-container": "#4f0002",
+                        "surface-dim": "#d3d1f8",
+                        "secondary-fixed-dim": "#eabe55",
+                        "on-surface-variant": "#5a5971",
+                        "on-surface": "#2d2d42",
+                        "on-secondary-container": "#5b4400",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#c7ffe4",
+                        "on-secondary": "#fff1da",
+                        "tertiary-dim": "#005b42",
+                        "on-secondary-fixed": "#443100",
+                        "secondary-dim": "#664c00",
+                        "surface-container": "#e8e5ff",
+                        "surface-bright": "#f8f5ff",
+                        "tertiary": "#00694c",
+                        "surface-container-highest": "#dbd9ff",
+                        "error": "#b41340",
+                        "on-error-container": "#510017",
+                        "inverse-on-surface": "#9c9ab4",
+                        "outline-variant": "#acaac5",
+                        "surface-variant": "#dbd9ff",
+                        "surface-tint": "#b71212",
+                        "on-tertiary-fixed": "#00412e",
+                        "tertiary-fixed": "#45f2b9",
+                        "background": "#f8f5ff",
+                        "error-dim": "#a70138",
+                        "surface-container-high": "#e2dfff",
+                        "secondary": "#745700",
+                        "on-tertiary-container": "#00563e",
+                        "on-primary": "#ffefed",
+                        "primary": "#b71212",
+                        "inverse-primary": "#ff5446",
+                        "secondary-fixed": "#f9cc61",
+                        "on-primary-fixed-variant": "#610002",
+                        "error-container": "#f74b6d",
+                        "on-error": "#ffefef",
+                        
+                        "memphis-navy": "#1A1A2E",
+                        "memphis-yellow": "#FFD166",
+                        "memphis-red": "#F24236",
+                        "memphis-mint": "#06D6A0",
+                        "memphis-blue": "#118AB2",
+                        "memphis-offwhite": "#FFF8F6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    "boxShadow": {
+                        'hard': '4px 4px 0px #1A1A2E',
+                        'hard-sm': '2px 2px 0px #1A1A2E',
+                        'hard-white': '3px 3px 0px #FFFFFF',
+                    },
+                    "backgroundImage": {
+                        'polka-white': 'radial-gradient(#ffffff 2px, transparent 2px)',
+                        'polka-dark': 'radial-gradient(#1A1A2E 1px, transparent 1px)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-polka-white {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 2px, transparent 2px);
+            background-size: 20px 20px;
+        }
+        .bg-polka-dark {
+            background-image: radial-gradient(rgba(26, 26, 46, 0.05) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
+    </style>
+</head>
+<body class="h-full bg-surface font-body text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<div class="flex min-h-screen w-full flex-col lg:flex-row">
+<!-- Left Panel: Brand & Visuals -->
+<div class="relative hidden lg:flex w-1/2 flex-col justify-between overflow-hidden bg-memphis-navy bg-polka-white p-12">
+<!-- Floating Elements Canvas -->
+<div class="absolute inset-0 z-0">
+<!-- Decorative Shapes -->
+<div class="absolute top-20 left-1/4 h-16 w-16 rounded-full bg-memphis-yellow border-2 border-memphis-navy shadow-hard"></div>
+<div class="absolute top-1/3 right-1/4 h-0 w-0 border-l-[30px] border-l-transparent border-b-[50px] border-b-memphis-red border-r-[30px] border-r-transparent rotate-12 drop-shadow-[4px_4px_0_#1A1A2E]"></div>
+<div class="absolute bottom-1/3 left-1/5 h-20 w-32 bg-memphis-mint border-2 border-memphis-navy shadow-hard -rotate-6"></div>
+<div class="absolute top-1/2 right-1/3 h-12 w-12 bg-memphis-blue border-2 border-memphis-navy shadow-hard rotate-45"></div>
+<!-- Zigzag lines -->
+<svg class="absolute top-1/2 left-0 w-full text-memphis-yellow opacity-80" height="20" preserveaspectratio="none" viewbox="0 0 100 20">
+<polyline fill="none" points="0,10 10,0 20,20 30,0 40,20 50,0 60,20 70,0 80,20 90,0 100,10" stroke="currentColor" stroke-linejoin="miter" stroke-width="4"></polyline>
+</svg>
+<!-- Floating Mini Cards -->
+<div class="absolute top-32 right-12 z-10 w-48 -rotate-6 transform bg-surface-container-lowest border-2 border-memphis-navy p-4 shadow-hard-white">
+<p class="font-headline text-sm font-bold text-on-background">Họp chung cư tháng 4</p>
+<div class="mt-2 h-2 w-2/3 bg-surface-dim"></div>
+</div>
+<div class="absolute bottom-48 left-12 z-10 w-48 rotate-3 transform bg-surface-container-lowest border-2 border-memphis-navy p-4 shadow-hard-white">
+<p class="font-headline text-sm font-bold text-on-background">Cho mượn xe đạp</p>
+<div class="mt-2 h-2 w-3/4 bg-surface-dim"></div>
+</div>
+<div class="absolute top-2/3 right-24 z-10 w-40 rotate-12 transform bg-surface-container-lowest border-2 border-memphis-navy p-4 shadow-hard-white">
+<p class="font-headline text-sm font-bold text-on-background">Wifi tầng hầm?</p>
+<div class="mt-2 h-2 w-1/2 bg-surface-dim"></div>
+</div>
+</div>
+<div class="z-10 mt-auto">
+<div class="relative inline-block">
+<h1 class="font-headline text-5xl font-extrabold text-white">ComBoard</h1>
+<svg class="absolute -bottom-3 left-0 w-full text-memphis-red" height="12" preserveaspectratio="none" viewbox="0 0 100 12">
+<path d="M0,6 Q12.5,0 25,6 T50,6 T75,6 T100,6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+</div>
+<p class="mt-6 font-body text-base text-white/70">Bảng thông báo số cho cộng đồng của bạn</p>
+</div>
+</div>
+<!-- Right Panel: Login Form -->
+<div class="flex w-full lg:w-1/2 flex-col justify-center bg-memphis-offwhite bg-polka-dark px-6 py-12 sm:px-12 lg:px-24">
+<div class="mx-auto w-full max-w-[400px]">
+<!-- Heading -->
+<div class="mb-10 text-left">
+<h2 class="font-headline text-3xl font-bold text-memphis-navy">Chào mừng trở lại! 👋</h2>
+<p class="mt-2 font-body text-sm text-on-surface-variant">Đăng nhập để xem bảng thông báo khu bạn</p>
+</div>
+<!-- Social Login -->
+<div class="space-y-4">
+<button class="flex w-full items-center justify-center gap-3 bg-surface-container-lowest border-2 border-memphis-navy py-3 px-4 font-label text-sm font-semibold text-memphis-navy shadow-hard transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-hard-sm">
+<img alt="Google" class="h-5 w-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUGx1Ipn78Jp0kBZcsKQ4URn-z0_TdwzaaX6Zp35mOUVkRVO1oDRz73ix4VYkBeR79T5yLb8C_NILEVfzSU2s2HAz-8zy4BtOLS7G3IS38k5h5o4NuNoczYMC_SDTgpBASKK7_6etoljD5ReEDX-JnGDreIIXOixoxbsHt5oTgddKoCEkdcgtApUZCdPKDa5c0QiRlbgq9RucpL1fhftD2qLEWpxmVxruYZ08_zxr-IMOWGKDAlYGhS3g4ADH8mXubUaQ2CNyLmdHK"/>
+                        Tiếp tục với Google
+                    </button>
+<button class="flex w-full items-center justify-center gap-3 bg-surface-container-lowest border-2 border-memphis-navy py-3 px-4 font-label text-sm font-semibold text-memphis-navy shadow-hard transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-hard-sm">
+<img alt="Facebook" class="h-5 w-5" data-alt="Facebook logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3sScThTlgAt1hvwyVZu5yFzf3Y35aI9ozsvhNyW9y7ODs_z9NdMLQN8k6WRz4JoMXpnPLocVMld8ZrtCa9Go1BUf4qabHvebMrckjvPz1VpDQnHK7vEiyFBBCGyVDtyaPhdoACx_KHDVUX3HlFRv2ZjcBHTW2L0vKQ9Fo5fKg4mbTB1jAhzJIqSnHnJVZobnDzhG_DeAJ_CiN4K5tw-H9625TfjLd44W2jPOUMTbUdFemT-YMGWV1M-6vizXQyMwd6U5jxXTU2676"/>
+                        Tiếp tục với Facebook
+                    </button>
+</div>
+<!-- Divider -->
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-dashed border-outline-variant"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-memphis-offwhite px-4 font-body text-xs uppercase tracking-widest text-outline">hoặc</span>
+</div>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-6" method="POST">
+<div>
+<label class="mb-2 block font-label text-sm font-medium text-memphis-navy" for="email">Email</label>
+<input autocomplete="email" class="block w-full rounded bg-surface-container-lowest border-2 border-memphis-navy px-4 py-3 text-on-background shadow-hard focus:border-primary focus:outline-none focus:ring-0 transition-colors" id="email" name="email" required="" type="email"/>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="block font-label text-sm font-medium text-memphis-navy" for="password">Mật khẩu</label>
+<a class="font-label text-xs font-semibold text-primary hover:underline" href="#">Quên mật khẩu?</a>
+</div>
+<input autocomplete="current-password" class="block w-full rounded bg-surface-container-lowest border-2 border-memphis-navy px-4 py-3 text-on-background shadow-hard focus:border-primary focus:outline-none focus:ring-0 transition-colors" id="password" name="password" required="" type="password"/>
+</div>
+<button class="flex w-full items-center justify-center gap-2 bg-memphis-red border-2 border-memphis-navy py-4 px-4 font-label text-base font-bold text-white shadow-[5px_5px_0_#1A1A2E] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#1A1A2E]" type="submit">
+                        Đăng nhập
+                        <span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</form>
+<!-- Footer -->
+<div class="mt-12 text-center">
+<p class="flex items-center justify-center gap-1 font-body text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                        Bảo mật với mã hóa SSL 256-bit
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

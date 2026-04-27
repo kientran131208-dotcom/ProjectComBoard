@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComBoard - Empty State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Poppins:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f5ff",
+                        "error-container": "#f74b6d",
+                        "outline-variant": "#acaac5",
+                        "primary-fixed": "#ff7767",
+                        "primary-fixed-dim": "#ff5b4c",
+                        "on-tertiary": "#c7ffe4",
+                        "error": "#b41340",
+                        "secondary-container": "#f9cc61",
+                        "tertiary-fixed-dim": "#2de3ac",
+                        "tertiary-fixed": "#45f2b9",
+                        "on-primary-container": "#4f0002",
+                        "primary": "#b71212",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-dim": "#664c00",
+                        "error-dim": "#a70138",
+                        "surface-bright": "#f8f5ff",
+                        "primary-container": "#ff7767",
+                        "secondary-fixed": "#f9cc61",
+                        "on-tertiary-fixed": "#00412e",
+                        "on-primary-fixed": "#000000",
+                        "inverse-on-surface": "#9c9ab4",
+                        "surface-variant": "#dbd9ff",
+                        "on-background": "#2d2d42",
+                        "surface-container-low": "#f2efff",
+                        "tertiary-container": "#45f2b9",
+                        "surface-dim": "#d3d1f8",
+                        "surface-tint": "#b71212",
+                        "surface-container-high": "#e2dfff",
+                        "on-tertiary-fixed-variant": "#006046",
+                        "on-error": "#ffefef",
+                        "on-secondary-container": "#5b4400",
+                        "secondary-fixed-dim": "#eabe55",
+                        "inverse-primary": "#ff5446",
+                        "primary-dim": "#a40008",
+                        "on-primary-fixed-variant": "#610002",
+                        "tertiary": "#00694c",
+                        "tertiary-dim": "#005b42",
+                        "on-secondary": "#fff1da",
+                        "on-secondary-fixed": "#443100",
+                        "on-tertiary-container": "#00563e",
+                        "on-surface-variant": "#5a5971",
+                        "inverse-surface": "#0c0c1f",
+                        "on-surface": "#2d2d42",
+                        "on-error-container": "#510017",
+                        "background": "#f8f5ff",
+                        "on-primary": "#ffefed",
+                        "surface-container": "#e8e5ff",
+                        "secondary": "#745700",
+                        "outline": "#75748d",
+                        "on-secondary-fixed-variant": "#674d00",
+                        "surface-container-highest": "#dbd9ff",
+                        "comboard-red": "#F24236",
+                        "comboard-navy": "#1A1A2E",
+                        "comboard-mint": "#06D6A0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    "boxShadow": {
+                        "hard": "4px 4px 0px #1A1A2E",
+                        "hard-lg": "6px 6px 0px #1A1A2E",
+                        "hard-active": "2px 2px 0px #1A1A2E"
+                    },
+                    "backgroundImage": {
+                        "polka": "radial-gradient(#1A1A2E 1px, transparent 1px)",
+                    },
+                    "backgroundSize": {
+                        "polka": "20px 20px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .memphis-shape { position: absolute; pointer-events: none; }
+        .bg-pattern { background-image: radial-gradient(rgba(26, 26, 46, 0.05) 1.5px, transparent 1.5px); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex flex-col overflow-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-white dark:bg-zinc-900 border-b-2 border-on-primary-fixed h-20">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-black text-on-primary-fixed font-headline uppercase tracking-tight">ComBoard</span>
+</div>
+<div class="hidden md:flex items-center justify-center flex-1">
+<h1 class="font-poppins font-semibold text-lg text-on-surface">Khu Dân Cư Sunrise City</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="hidden md:flex items-center gap-2 bg-comboard-red text-white px-4 py-2 font-poppins font-bold rounded-DEFAULT border-2 border-on-primary-fixed shadow-hard hover:shadow-hard-active hover:translate-y-[2px] hover:translate-x-[2px] transition-all">
+<span>+ Dán thông báo</span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-on-primary-fixed overflow-hidden bg-surface-container-low shadow-[2px_2px_0px_#1A1A2E]">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a young woman with natural makeup looking directly at camera, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0dlPIXFyafpFQ5Ga98wdhG5M0Ctmqbn9--bLMu57hTNTy8xe5jwXD63xagtq70Ss6dt0lQriuEkIK2y_qYgSeuaq53MQ5-zYcaX2xmxDq4O8drllNww3gOSjX6bTrCCaif6MVBrbt17gWsFoX4rBFBTWh1TdPoi97Xpre0T1dSncR6sfVPkWJylSe9aGcVehh5nw5Cy7-zBNB-2jl4uvfZIiOPLKi8CjQSqpRLk-I9RkUDusCB1bTRoIF3LKqFZ_BWpMjX680b4mh"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Floating Pill Variant) -->
+<aside class="fixed left-6 top-28 bottom-6 w-20 flex flex-col items-center py-6 bg-surface-container-lowest border-2 border-on-primary-fixed rounded-full shadow-hard z-40">
+<div class="flex flex-col gap-6 w-full items-center">
+<button class="w-12 h-12 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Tất cả">
+<span class="font-poppins font-bold text-sm">All</span>
+</button>
+<div class="w-8 h-[2px] bg-outline-variant opacity-30"></div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Announcements">
+<span class="text-2xl">📢</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Borrowing">
+<span class="text-2xl">🔄</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Q&amp;A">
+<span class="text-2xl">❓</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 mt-20 ml-32 relative bg-[#FFF8F6] bg-pattern flex items-center justify-center overflow-y-auto">
+<!-- Decorative Memphis Shapes -->
+<div class="memphis-shape w-64 h-64 rounded-full bg-secondary-container opacity-15 top-12 left-12"></div>
+<div class="memphis-shape w-0 h-0 border-l-[40px] border-l-transparent border-b-[60px] border-b-comboard-red border-r-[40px] border-r-transparent bottom-24 right-24 rotate-12"></div>
+<svg class="memphis-shape right-12 top-1/2 -translate-y-1/2" fill="none" height="150" viewbox="0 0 60 150" width="60" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 5L55 35L5 65L55 95L5 125" stroke="#06D6A0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="8"></path>
+</svg>
+<!-- Empty State Container -->
+<div class="w-full max-w-3xl flex flex-col items-center text-center p-8 z-10">
+<!-- Illustration -->
+<div class="w-[280px] h-[280px] bg-[#E8D8C8] border-2 border-on-primary-fixed shadow-hard mb-8 relative flex items-center justify-center p-4">
+<div class="w-full h-full border-2 border-dashed border-[#C4A484] opacity-50 absolute inset-2 pointer-events-none"></div>
+<!-- Pushpins -->
+<div class="absolute top-6 left-8 w-4 h-4 rounded-full bg-comboard-red border-[1.5px] border-on-primary-fixed shadow-[1px_1px_0px_#1A1A2E]"></div>
+<div class="absolute bottom-10 right-12 w-4 h-4 rounded-full bg-secondary-container border-[1.5px] border-on-primary-fixed shadow-[1px_1px_0px_#1A1A2E]"></div>
+<div class="absolute top-1/2 left-1/2 w-4 h-4 rounded-full bg-comboard-mint border-[1.5px] border-on-primary-fixed shadow-[1px_1px_0px_#1A1A2E] -translate-x-1/2 -translate-y-1/2"></div>
+</div>
+<!-- Typography -->
+<h2 class="font-poppins font-bold text-[28px] text-comboard-navy mb-3">Bảng này chưa có thông báo nào! 📋</h2>
+<p class="font-body text-[16px] text-[#6B6B8A] mb-8 max-w-md">Hãy là người đầu tiên chia sẻ với cộng đồng.</p>
+<!-- Primary CTA -->
+<button class="w-[260px] h-[56px] bg-comboard-red text-white font-poppins font-bold text-[16px] flex items-center justify-center gap-2 border-2 border-on-primary-fixed shadow-hard-lg hover:shadow-hard-active hover:translate-y-[4px] hover:translate-x-[4px] transition-all mb-12">
+<span>📌 + Dán thông báo đầu tiên</span>
+</button>
+<!-- Suggestions Section -->
+<div class="w-full flex flex-col items-center gap-4">
+<span class="font-poppins font-semibold text-[14px] text-on-surface">Hoặc bắt đầu với...</span>
+<div class="flex flex-wrap justify-center gap-4 w-full">
+<!-- Suggestion 1 -->
+<button class="w-[160px] bg-surface-container-lowest border-2 border-on-primary-fixed shadow-hard flex items-center overflow-hidden hover:bg-surface-container-low transition-colors text-left group">
+<div class="w-2 h-full bg-secondary-container min-h-[48px]"></div>
+<div class="px-3 py-2 flex items-center gap-2 w-full">
+<span class="text-lg">📢</span>
+<span class="font-poppins font-medium text-[13px] leading-tight group-hover:underline">Đăng thông báo</span>
+</div>
+</button>
+<!-- Suggestion 2 -->
+<button class="w-[160px] bg-surface-container-lowest border-2 border-on-primary-fixed shadow-hard flex items-center overflow-hidden hover:bg-surface-container-low transition-colors text-left group">
+<div class="w-2 h-full bg-comboard-mint min-h-[48px]"></div>
+<div class="px-3 py-2 flex items-center gap-2 w-full">
+<span class="text-lg">🔄</span>
+<span class="font-poppins font-medium text-[13px] leading-tight group-hover:underline">Cho/mượn đồ</span>
+</div>
+</button>
+<!-- Suggestion 3 -->
+<button class="w-[160px] bg-surface-container-lowest border-2 border-on-primary-fixed shadow-hard flex items-center overflow-hidden hover:bg-surface-container-low transition-colors text-left group">
+<div class="w-2 h-full bg-[#4DB8FF] min-h-[48px]"></div>
+<div class="px-3 py-2 flex items-center gap-2 w-full">
+<span class="text-lg">❓</span>
+<span class="font-poppins font-medium text-[13px] leading-tight group-hover:underline">Hỏi &amp; Đáp</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Bottom Note -->
+<div class="mt-10 px-4 py-2 bg-[#06D6A0]/15 border-2 border-dashed border-comboard-mint rounded-full">
+<p class="font-body italic text-[13px] text-[#6B6B8A]">💡 Mẹo: Thêm thành viên để bảng thêm sôi nổi!</p>
+</div>
+</div>
+</main>
+</body></html>

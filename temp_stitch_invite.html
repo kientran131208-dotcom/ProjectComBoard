@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComBoard - Join Board via Invite Link</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#b41340",
+                        "secondary-dim": "#664c00",
+                        "primary-dim": "#a40008",
+                        "on-surface-variant": "#5a5971",
+                        "on-background": "#2d2d42",
+                        "surface-variant": "#dbd9ff",
+                        "on-tertiary-fixed": "#00412e",
+                        "on-error": "#ffefef",
+                        "surface-container-high": "#e2dfff",
+                        "surface-bright": "#f8f5ff",
+                        "secondary-fixed-dim": "#eabe55",
+                        "inverse-primary": "#ff5446",
+                        "on-secondary-container": "#5b4400",
+                        "tertiary-dim": "#005b42",
+                        "inverse-on-surface": "#9c9ab4",
+                        "tertiary-fixed-dim": "#2de3ac",
+                        "surface-dim": "#d3d1f8",
+                        "surface": "#f8f5ff",
+                        "outline-variant": "#acaac5",
+                        "on-tertiary": "#c7ffe4",
+                        "on-primary-fixed-variant": "#610002",
+                        "on-secondary": "#fff1da",
+                        "surface-container-low": "#f2efff",
+                        "tertiary": "#00694c",
+                        "primary-fixed": "#ff7767",
+                        "error-dim": "#a70138",
+                        "surface-tint": "#b71212",
+                        "background": "#f8f5ff",
+                        "secondary-fixed": "#f9cc61",
+                        "outline": "#75748d",
+                        "on-surface": "#2d2d42",
+                        "on-primary": "#ffefed",
+                        "tertiary-container": "#45f2b9",
+                        "primary-fixed-dim": "#ff5b4c",
+                        "on-primary-container": "#4f0002",
+                        "on-error-container": "#510017",
+                        "secondary": "#745700",
+                        "on-secondary-fixed": "#443100",
+                        "primary-container": "#ff7767",
+                        "secondary-container": "#f9cc61",
+                        "inverse-surface": "#0c0c1f",
+                        "tertiary-fixed": "#45f2b9",
+                        "surface-container": "#e8e5ff",
+                        "primary": "#b71212",
+                        "error-container": "#f74b6d",
+                        "surface-container-highest": "#dbd9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#000000",
+                        "on-tertiary-container": "#00563e",
+                        "on-tertiary-fixed-variant": "#006046",
+                        "on-secondary-fixed-variant": "#674d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .memphis-shadow-hard {
+            box-shadow: 4px 4px 0px 0px #2d2d42;
+        }
+        .memphis-shadow-hard-large {
+            box-shadow: 8px 8px 0px 0px #2d2d42;
+        }
+        .memphis-shadow-hard-xl {
+            box-shadow: 6px 6px 0px 0px #2d2d42;
+        }
+        .memphis-border {
+            border: 2px solid #2d2d42;
+        }
+        .memphis-polka {
+            background-image: radial-gradient(rgba(45, 45, 66, 0.05) 2px, transparent 2px);
+            background-size: 20px 20px;
+        }
+        .memphis-zigzag {
+            background: linear-gradient(135deg, rgba(45, 45, 66, 0.1) 25%, transparent 25%) -25px 0,
+                        linear-gradient(225deg, rgba(45, 45, 66, 0.1) 25%, transparent 25%) -25px 0,
+                        linear-gradient(315deg, rgba(45, 45, 66, 0.1) 25%, transparent 25%),
+                        linear-gradient(45deg, rgba(45, 45, 66, 0.1) 25%, transparent 25%);
+            background-size: 20px 20px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen memphis-polka p-8 flex flex-col md:flex-row gap-12 justify-center items-start">
+<!-- LEFT SECTION: INVITE PREVIEW -->
+<div class="w-full max-w-[520px] bg-surface-container-lowest memphis-border memphis-shadow-hard-large rounded-xl relative overflow-hidden flex flex-col">
+<!-- Decorative Triangle -->
+<div class="absolute -top-4 -right-4 w-12 h-12 bg-secondary-container transform rotate-45 z-10 memphis-border"></div>
+<!-- Header Strip -->
+<div class="h-[140px] bg-secondary-container memphis-zigzag memphis-border border-t-0 border-l-0 border-r-0 relative flex items-center justify-center">
+<div class="absolute top-4 left-4 bg-surface-container-lowest memphis-border px-3 py-1 rounded-full memphis-shadow-hard flex items-center gap-2">
+<span class="text-xs font-semibold font-label">📩 Lời mời tham gia</span>
+</div>
+<div class="text-6xl bg-surface-container-lowest rounded-full p-2 memphis-border memphis-shadow-hard relative z-10">🏘️</div>
+<div class="absolute bottom-[-16px] right-6 bg-surface-container-lowest memphis-border px-4 py-1.5 rounded-full memphis-shadow-hard z-20">
+<span class="text-sm font-bold font-body">47 thành viên</span>
+</div>
+</div>
+<!-- Body Content -->
+<div class="p-8 flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface-variant text-sm font-medium">Bạn được mời vào</span>
+<h1 class="font-headline font-bold text-3xl leading-tight">Khu Dân Cư Sunrise City</h1>
+<p class="text-on-surface-variant text-sm leading-relaxed mt-2">Không gian thông báo chính thức và thảo luận dành riêng cho cư dân. Vui lòng tham gia để cập nhật tin tức mới nhất từ Ban Quản Trị.</p>
+</div>
+<!-- Dashed Divider -->
+<div class="w-full border-t-2 border-dashed border-outline-variant my-2"></div>
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-surface-container-low memphis-border p-3 rounded-lg flex flex-col items-center justify-center memphis-shadow-hard">
+<span class="text-xl mb-1">👥</span>
+<span class="text-xs font-bold text-center">47 Thành viên</span>
+</div>
+<div class="bg-surface-container-low memphis-border p-3 rounded-lg flex flex-col items-center justify-center memphis-shadow-hard">
+<span class="text-xl mb-1">📢</span>
+<span class="text-xs font-bold text-center">23 Thông báo</span>
+</div>
+<div class="bg-surface-container-low memphis-border p-3 rounded-lg flex flex-col items-center justify-center memphis-shadow-hard">
+<span class="text-xl mb-1">🟢</span>
+<span class="text-xs font-bold text-center">Đang hoạt động</span>
+</div>
+</div>
+<!-- Sender Info -->
+<div class="flex items-center gap-4 bg-surface-container-low p-3 rounded-lg memphis-border">
+<div class="w-12 h-12 bg-primary-container rounded-full memphis-border overflow-hidden flex-shrink-0">
+<img alt="Profile avatar of Nguyễn Văn Minh" class="w-full h-full object-cover" data-alt="close up portrait of an asian man with glasses smiling softly against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvO5Isripyx5Rgc0wVatHVfX7vMOylY-SsciyRfVIzT57zFeQyAYW5giYmv_iGFkMsXqjUTjKh8u9uu7jCS9RHRTD0qCkhUiDVIPsPvKQGJ-Ga3sf8IbIOGVW9OwrqUF8p3W1TWxboArbEXqUcBCNFeZPHYfS054tvQUTBqRuc_IQBepBmz9KwCPjgqjjkxxRcVtsx8WaYEWR3Y80UllFlYqsNzHVHa38aW2-ZOjs2_v5_HiUSxsXnShj6Ela50KwQuQDFjDw7wdRq"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-on-surface-variant font-medium">Được mời bởi</span>
+<span class="font-bold font-body">Nguyễn Văn Minh</span>
+<span class="text-xs bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-full inline-block mt-1 w-max border border-on-tertiary-container">Quản trị viên</span>
+</div>
+</div>
+<!-- Link Box -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center bg-surface-container-lowest memphis-border rounded-lg p-2 memphis-shadow-hard">
+<input class="bg-transparent border-none outline-none flex-grow text-sm font-mono text-on-surface-variant p-2 w-full focus:ring-0" readonly="" type="text" value="comboard.app/invite/abc123xyz"/>
+<button aria-label="Copy link" class="bg-tertiary-container memphis-border p-2 rounded-lg hover:bg-tertiary-fixed transition-colors flex-shrink-0 active:translate-y-[2px] active:translate-x-[2px] active:shadow-none">
+<span class="material-symbols-outlined text-on-tertiary-container">content_copy</span>
+</button>
+</div>
+<div class="flex justify-center mt-2">
+<span class="bg-secondary-container memphis-border px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-[2px_2px_0px_0px_#2d2d42]">
+                        ⏰ Link hết hạn sau: 6 ngày 14 giờ
+                    </span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4 mt-4">
+<button class="bg-primary text-on-primary font-headline font-bold text-lg h-14 rounded-lg memphis-border memphis-shadow-hard-xl hover:bg-surface-tint transition-all active:translate-y-[2px] active:translate-x-[2px] active:shadow-none flex items-center justify-center gap-2">
+<span>🎉</span> Tham gia ngay!
+                </button>
+<button class="bg-surface-container-lowest text-on-background font-headline font-bold h-12 rounded-lg memphis-border shadow-[3px_3px_0px_0px_#2d2d42] hover:bg-surface-container-low transition-all active:translate-y-[1px] active:translate-x-[1px] active:shadow-none">
+                    Xem trước bảng
+                </button>
+</div>
+</div>
+</div>
+<!-- RIGHT SECTION: SUCCESS STATE -->
+<div class="w-full max-w-[520px] bg-surface-container-lowest memphis-border memphis-shadow-hard-large rounded-xl relative overflow-hidden flex flex-col">
+<!-- Decorative Triangle -->
+<div class="absolute -top-4 -right-4 w-12 h-12 bg-tertiary-container transform rotate-45 z-10 memphis-border"></div>
+<!-- Header Strip -->
+<div class="h-[140px] bg-tertiary-container memphis-zigzag memphis-border border-t-0 border-l-0 border-r-0 relative flex items-center justify-center overflow-hidden">
+<!-- Exploding shapes -->
+<div class="absolute top-4 left-8 w-6 h-6 bg-secondary-container rounded-full memphis-border"></div>
+<div class="absolute bottom-6 right-12 w-8 h-8 bg-primary-container transform rotate-12 memphis-border"></div>
+<div class="absolute top-8 right-8 w-4 h-4 bg-surface-container-lowest rounded-full border border-on-background"></div>
+<div class="absolute bottom-4 left-16 w-5 h-5 bg-surface-container-lowest transform rotate-45 memphis-border"></div>
+<div class="text-[80px] leading-none relative z-10 animate-bounce" style="animation-duration: 2s;">🎉</div>
+</div>
+<!-- Body Content -->
+<div class="p-8 flex flex-col gap-6 text-center">
+<div class="flex flex-col gap-2 items-center">
+<h2 class="font-headline font-bold text-3xl leading-tight">Tham gia thành công!</h2>
+<p class="text-on-surface-variant text-sm">Chào mừng bạn đến với <strong>Khu Dân Cư Sunrise City</strong></p>
+</div>
+<!-- Welcome Member Pill -->
+<div class="bg-tertiary-container/30 border-2 border-dashed border-tertiary py-3 px-4 rounded-xl inline-block mx-auto">
+<span class="font-bold text-tertiary flex items-center gap-2">
+<span class="text-xl">👋</span> Bạn là thành viên thứ 48
+                </span>
+</div>
+<!-- Quick Actions -->
+<div class="grid grid-cols-2 gap-4 mt-2">
+<button class="bg-secondary-container memphis-border p-4 rounded-xl memphis-shadow-hard flex flex-col items-center gap-2 hover:bg-secondary-fixed transition-colors active:translate-y-[2px] active:translate-x-[2px] active:shadow-none">
+<span class="material-symbols-outlined text-3xl">visibility</span>
+<span class="font-bold text-sm">Xem bảng ngay</span>
+</button>
+<button class="bg-tertiary-container memphis-border p-4 rounded-xl memphis-shadow-hard flex flex-col items-center gap-2 hover:bg-tertiary-fixed transition-colors active:translate-y-[2px] active:translate-x-[2px] active:shadow-none">
+<span class="material-symbols-outlined text-3xl">share</span>
+<span class="font-bold text-sm">Giới thiệu bạn bè</span>
+</button>
+</div>
+<!-- Share Link -->
+<div class="flex flex-col gap-2 text-left mt-4 border-t-2 border-dashed border-outline-variant pt-6">
+<label class="text-sm font-bold text-on-surface-variant">Chia sẻ link này với hàng xóm:</label>
+<div class="flex items-center bg-surface-container-lowest memphis-border rounded-lg p-2 memphis-shadow-hard">
+<input class="bg-transparent border-none outline-none flex-grow text-sm font-mono text-on-surface-variant p-2 w-full focus:ring-0" readonly="" type="text" value="comboard.app/invite/abc123xyz"/>
+<button aria-label="Copy link" class="bg-primary-container memphis-border p-2 rounded-lg hover:bg-primary-fixed transition-colors flex-shrink-0 active:translate-y-[2px] active:translate-x-[2px] active:shadow-none">
+<span class="material-symbols-outlined text-on-primary-container">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Primary CTA -->
+<div class="mt-6">
+<button class="w-full bg-primary text-on-primary font-headline font-bold text-lg h-14 rounded-lg memphis-border memphis-shadow-hard-xl hover:bg-surface-tint transition-all active:translate-y-[2px] active:translate-x-[2px] active:shadow-none flex items-center justify-center gap-2">
+                    Vào bảng ngay <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
