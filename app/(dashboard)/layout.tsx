@@ -90,7 +90,7 @@ export default async function DashboardLayout({
             friends={friends}
             pendingRequests={pendingRequests}
             unreadCounts={unreadCounts}
-            currentUserId={session.user.id}
+            currentUserId={session.user.id as string}
           />
         </div>
 
