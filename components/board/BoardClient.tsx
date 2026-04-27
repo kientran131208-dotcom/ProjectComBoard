@@ -94,8 +94,8 @@ export default function BoardClient({ board, currentUserId, friendIds = [] }: { 
   
   // Optimistic State
 
-  const [localPosts, setLocalPosts] = useState(board.posts || []);
-  const [localZones, setLocalZones] = useState(board.zones || []);
+  const [localPosts, setLocalPosts] = useState<any[]>(board.posts || []);
+  const [localZones, setLocalZones] = useState<any[]>(board.zones || []);
 
   useEffect(() => {
     setLocalPosts(board.posts || []);
