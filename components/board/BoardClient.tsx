@@ -389,7 +389,7 @@ export default function BoardClient({ board, currentUserId, friendIds = [] }: { 
     } catch (error: any) {
       console.error(error);
       // Fallback
-      toast.error(error.message || "Lỗi khi bình chọn");
+      alert(error.message || "Lỗi khi bình chọn");
       // Actually the useEffect will eventually sync it back from server
     }
   }, [board.id, currentUserId]);
