@@ -157,7 +157,6 @@ export const en = {
     }
   },
   dashboard: {
-    myCommunities: "My Communities",
     home: "Home",
     discover: "Discover",
     boards: "Boards",
@@ -213,7 +212,8 @@ export const en = {
       noPublicCommunities: "No public communities yet",
       tryAnotherKeyword: "Try another keyword",
       createFirstPublic: "Be the first to create a public board!",
-      systemAlert: "System Alert"
+      systemAlert: "System Alert",
+      myCommunities: "My Communities"
     }
   },
   search: {

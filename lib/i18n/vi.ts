@@ -157,7 +157,6 @@ export const vi = {
     }
   },
   dashboard: {
-    myCommunities: "Cộng đồng của tôi",
     home: "Trang chủ",
     discover: "Khám phá",
     boards: "Bảng tin",
@@ -213,7 +212,8 @@ export const vi = {
       noPublicCommunities: "Chưa có cộng đồng công khai nào",
       tryAnotherKeyword: "Hãy thử từ khóa khác",
       createFirstPublic: "Hãy là người đầu tiên tạo bảng công khai!",
-      systemAlert: "Cảnh báo hệ thống"
+      systemAlert: "Cảnh báo hệ thống",
+      myCommunities: "Cộng đồng của tôi"
     }
   },
   search: {
