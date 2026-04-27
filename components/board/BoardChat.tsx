@@ -34,11 +34,11 @@ export default function BoardChat({ boardId, boardName, members, currentUserId }
       
       // Calculate unread count if sidebar is closed
       if (!isOpen && !isInitial) {
-        const newMessages = data.filter(m => new Date(m.createdAt).getTime() > lastSeenTimestamp);
+        const newMessages = data.filter((m: any) => new Date(m.createdAt).getTime() > lastSeenTimestamp);
         if (newMessages.length > 0) {
           setUnreadCount(prev => prev + newMessages.length);
           // Update last seen to the latest message so we don't double count
-          setLastSeenTimestamp(Math.max(...data.map(m => new Date(m.createdAt).getTime())));
+          setLastSeenTimestamp(Math.max(...data.map((m: any) => new Date(m.createdAt).getTime())));
         }
       }
 
@@ -139,7 +139,7 @@ export default function BoardChat({ boardId, boardName, members, currentUserId }
           {/* Members List (Compact Header) */}
           <div className="px-4 py-2 bg-zinc-100 border-b-2 border-black flex items-center gap-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
              <div className="flex -space-x-2">
-               {members.slice(0, 5).map((m, i) => (
+               {members.slice(0, 5).map((m: any, i: number) => (
                  <div key={m.userId} className="w-6 h-6 border-2 border-black rounded-full overflow-hidden bg-white shadow-sm" title={m.user.name}>
                    <img src={m.user.image || `https://ui-avatars.com/api/?name=${m.user.name}`} alt="avatar" />
                  </div>
