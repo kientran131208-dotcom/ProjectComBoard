@@ -664,7 +664,7 @@ export default function PostDetailModal({
                               className={`flex items-center gap-1 transition-colors ${isCommentLiked ? 'text-red-500' : 'hover:text-black'}`}
                             >
                               <Heart size={14} fill={isCommentLiked ? "currentColor" : "none"} />
-                              {t.board.like} {comment._count?.commentLikes > 0 && `(${comment._count.commentLikes})`}
+                              {t.board.like} {(comment._count?.commentLikes ?? 0) > 0 && `(${comment._count?.commentLikes})`}
                             </button>
                             <button 
                               onClick={() => setReplyTo(replyTo === comment.id ? null : comment.id)}
@@ -735,7 +735,7 @@ export default function PostDetailModal({
                                       className={`flex items-center gap-1 transition-colors ${isReplyLiked ? 'text-red-500' : 'hover:text-black'}`}
                                     >
                                       <Heart size={12} fill={isReplyLiked ? "currentColor" : "none"} />
-                                      {reply._count?.commentLikes > 0 && reply._count.commentLikes}
+                                      {(reply._count?.commentLikes ?? 0) > 0 && reply._count?.commentLikes}
                                     </button>
                                     <span>{formatDate(reply.createdAt)}</span>
                                   </div>
