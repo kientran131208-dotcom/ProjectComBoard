@@ -1,4 +1,4 @@
-import { PrismaClient } from "./generated/client_v4";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 async function main() {
   const count = await prisma.post.count();

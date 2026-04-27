@@ -1,5 +1,5 @@
 import { prisma } from "./lib/prisma";
-import { PostType, PostStatus } from "./generated/client_v4";
+import { PostType, PostStatus } from "@prisma/client";
 
 async function main() {
   const boards = await prisma.board.findMany({ take: 5 });
