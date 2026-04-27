@@ -1,5 +1,5 @@
 import { prisma } from "./lib/prisma";
-import { PostType, PostStatus } from "@prisma/client";
+
 
 async function main() {
   const boards = await prisma.board.findMany({ take: 5 });
@@ -31,11 +31,11 @@ async function main() {
       authorId: authorId,
       title: `${postTitles[i % postTitles.length]} #${i + 1}`,
       content: `Nội dung chi tiết cho bài đăng số ${i + 1}. Đây là dữ liệu giả lập để kiểm tra hiệu năng hệ thống ComBoard với số lượng lớn dữ liệu.`,
-      type: (i % 3 === 0 ? "ANNOUNCEMENT" : (i % 3 === 1 ? "BORROWING" : "QNA")) as PostType,
+      type: (i % 3 === 0 ? "ANNOUNCEMENT" : (i % 3 === 1 ? "BORROWING" : "QNA")),
       x: Math.random() * 10000 - 5000,
       y: Math.random() * 10000 - 5000,
       rotation: Math.random() * 30 - 15,
-      status: "OPEN" as PostStatus,
+      status: "OPEN",
     });
   }
 
