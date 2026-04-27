@@ -117,7 +117,7 @@ export default function CreateZoneModal({
         {/* Footer */}
         <div className="p-6 border-t-4 border-black bg-[#f2efff] flex justify-between items-center">
           <button 
-            onClick={onClose}
+            onClick={() => onClose()}
             className="text-xs font-black uppercase tracking-widest text-[#5a5971] hover:text-[#b71212] transition-colors"
           >
             {t.modals.cancel}
