@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { verifyRegistrationAction } from "@/lib/actions/authActions";
+export const dynamic = "force-dynamic";
 
 export default async function VerifyAccountPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   const resolvedParams = await searchParams;

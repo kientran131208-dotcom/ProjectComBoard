@@ -1,4 +1,5 @@
 import { prisma } from "./lib/prisma";
+import { PostType, PostStatus } from "./generated/client_v4";
 
 async function main() {
   const boards = await prisma.board.findMany({ take: 5 });
@@ -22,7 +23,7 @@ async function main() {
     "Tìm việc/Tuyển dụng", "Bán hàng nông sản", "Câu lạc bộ cư dân", "Cảnh báo lừa đảo"
   ];
 
-  const postsData = [];
+  const postsData: any[] = [];
 
   for (let i = 0; i < count; i++) {
     postsData.push({
@@ -30,11 +31,11 @@ async function main() {
       authorId: authorId,
       title: `${postTitles[i % postTitles.length]} #${i + 1}`,
       content: `Nội dung chi tiết cho bài đăng số ${i + 1}. Đây là dữ liệu giả lập để kiểm tra hiệu năng hệ thống ComBoard với số lượng lớn dữ liệu.`,
-      type: i % 3 === 0 ? "ANNOUNCEMENT" : (i % 3 === 1 ? "BORROWING" : "QNA"),
+      type: (i % 3 === 0 ? "ANNOUNCEMENT" : (i % 3 === 1 ? "BORROWING" : "QNA")) as PostType,
       x: Math.random() * 10000 - 5000,
       y: Math.random() * 10000 - 5000,
       rotation: Math.random() * 30 - 15,
-      status: "OPEN",
+      status: "OPEN" as PostStatus,
     });
   }
 

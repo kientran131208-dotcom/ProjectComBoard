@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+export const dynamic = "force-dynamic";
 import RegisterForm from "@/components/auth/RegisterForm";
 import RegisterVisuals from "@/components/auth/RegisterVisuals";
 

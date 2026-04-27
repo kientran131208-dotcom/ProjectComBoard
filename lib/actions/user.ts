@@ -66,11 +66,27 @@ export async function deleteUserAccount() {
       // 1. Delete notifications
       await tx.notification.deleteMany({ where: { userId } });
 
-      // 2. Delete posts (author)
+      // 2. Delete social interactions
+      await tx.like.deleteMany({ where: { userId } });
+      await tx.commentLike.deleteMany({ where: { userId } });
+      await tx.pollVote.deleteMany({ where: { userId } });
+      await tx.comment.deleteMany({ where: { authorId: userId } });
+      await tx.message.deleteMany({ where: { senderId: userId } });
+      await tx.message.deleteMany({ where: { receiverId: userId } });
+
+      // 3. Delete friendships
+      await tx.friendRequest.deleteMany({ 
+        where: { OR: [{ senderId: userId }, { receiverId: userId }] } 
+      });
+      await tx.friendship.deleteMany({ 
+        where: { OR: [{ userId: userId }, { friendId: userId }] } 
+      });
+
+      // 4. Delete posts (author)
       await tx.post.deleteMany({ where: { authorId: userId } });
 
-      // 3. Delete memberships
-      await tx.member.deleteMany({ where: { userId } });
+      // 5. Delete memberships
+      await tx.boardMember.deleteMany({ where: { userId } });
 
       // 4. Handle boards created by user
       const createdBoards = await tx.board.findMany({
@@ -78,7 +94,7 @@ export async function deleteUserAccount() {
       });
 
       for (const board of createdBoards) {
-          const otherAdmin = await tx.member.findFirst({
+          const otherAdmin = await tx.boardMember.findFirst({
               where: { boardId: board.id, role: "ADMIN", NOT: { userId } }
           });
 
