@@ -53,10 +53,10 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-  if (!session) redirect("/login");
+  if (!session?.user) redirect("/login");
 
   const dbUser = await prisma.user.findUnique({
-    where: { id: session.user.id }
+    where: { id: session.user.id as string }
   });
 
   const fallbackAvatar = "https://lh3.googleusercontent.com/aida-public/AB6AXuAhroIcGvuJUMSEpEbgv-Osv3eoKVIQavy2j59GUwsQ8LW6yD27WjliAYw4fmw-dywZ6Gc38LUxQjuW7KO-UdNTQKvKg2vpCOOyuMjLwPxpS5iphf56lIP5JaDed0F2-vuLu1wcn6_gozvXW27ygn8YikXAjdcEHmMH88dESC5K906ql_NemCw9zFeKaVx__FznIFKyKlw9H3CYqj9xjO4oWwfrvtLw1-B11eBd7cuMwk9PPl6oe4EyfR5xKI6DQ2kCqbnff4BZlgwj";
