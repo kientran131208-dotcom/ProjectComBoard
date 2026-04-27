@@ -45,7 +45,7 @@ const PostCard = memo(({
   onUpdatePost,
   onVotePoll 
 }: PostCardProps) => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const isAtOrigin = post.x === 0 && post.y === 0;
   const gridX = isAtOrigin ? (index % 3) * 350 + 100 : post.x;
   const gridY = isAtOrigin ? Math.floor(index / 3) * 300 + 100 : post.y;
@@ -422,7 +422,7 @@ const PostCard = memo(({
                 <span className="text-[10px] font-black uppercase tracking-tight">{post.author.name}</span>
               </div>
               <span className="text-[9px] font-bold text-black/40 uppercase tracking-widest">
-                {new Date(post.createdAt).toLocaleDateString(t.language === 'en' ? 'en-US' : 'vi-VN')}
+                {new Date(post.createdAt).toLocaleDateString(language === 'en' ? 'en-US' : 'vi-VN')}
               </span>
             </div>
           </div>
