@@ -451,6 +451,36 @@ export default function BoardClient({ board, currentUserId, friendIds = [] }: { 
     });
   }, [filteredPosts]);
 
+  // Performance Optimization: Viewport Culling
+  // Only render posts that are likely to be visible or near the visible area
+  const visiblePosts = useMemo(() => {
+    if (finalPosts.length <= 50) return finalPosts; // No need to cull if few posts
+
+    const buffer = 500; // Extra pixels around the viewport to prevent flickering when panning
+    const scale = viewport.scale;
+    
+    // Calculate viewport bounds in canvas coordinates
+    const vLeft = -viewport.x / scale - buffer;
+    const vTop = -viewport.y / scale - buffer;
+    const vRight = (-viewport.x + (typeof window !== 'undefined' ? window.innerWidth : 1920)) / scale + buffer;
+    const vBottom = (-viewport.y + (typeof window !== 'undefined' ? window.innerHeight : 1080)) / scale + buffer;
+
+    return finalPosts.filter((post, index) => {
+      // Pinned posts are always rendered for accessibility and consistent UI
+      if (post.isPinned) return true;
+
+      // Use pre-calculated grid positions if x/y are 0
+      const isAtOrigin = post.x === 0 && post.y === 0;
+      const x = isAtOrigin ? (index % 3) * 350 + 100 : post.x;
+      const y = isAtOrigin ? Math.floor(index / 3) * 300 + 100 : post.y;
+      const w = post.width || 400;
+      const h = post.height || 300;
+
+      // Check intersection
+      return x + w > vLeft && x < vRight && y + h > vTop && y < vBottom;
+    });
+  }, [finalPosts, viewport]);
+
   return (
     <div className="bg-[#FFF8F6] text-on-surface font-body h-screen w-screen overflow-hidden relative">
       {/* Pattern Overlay */}
@@ -637,22 +667,26 @@ export default function BoardClient({ board, currentUserId, friendIds = [] }: { 
             />
           ))}
 
-          {finalPosts.map((post: any, index: number) => (
-            <PostCard
-              key={post.id}
-              post={post}
-              index={index}
-              currentUserId={currentUserId}
-              isAdmin={isAdmin}
-              viewportScale={viewport.scale}
-              onDelete={setPostToDelete}
-              onSelect={setSelectedPostId}
-              onTogglePin={handleTogglePin}
-              onUpdateTransform={handleUpdatePostTransform}
-              onUpdatePost={handleUpdatePost}
-              onVotePoll={handleVotePoll}
-            />
-          ))}
+          {visiblePosts.map((post: any, index: number) => {
+             // Find original index in full list for consistent Z-index
+             const originalIndex = finalPosts.findIndex(p => p.id === post.id);
+             return (
+              <PostCard
+                key={post.id}
+                post={post}
+                index={originalIndex !== -1 ? originalIndex : index}
+                currentUserId={currentUserId}
+                isAdmin={isAdmin}
+                viewportScale={viewport.scale}
+                onDelete={setPostToDelete}
+                onSelect={setSelectedPostId}
+                onTogglePin={handleTogglePin}
+                onUpdateTransform={handleUpdatePostTransform}
+                onUpdatePost={handleUpdatePost}
+                onVotePoll={handleVotePoll}
+              />
+            );
+          })}
         </div>
       </div>
 
