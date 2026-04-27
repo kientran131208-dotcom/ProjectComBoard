@@ -62,7 +62,7 @@ export async function deleteUserAccount() {
 
   try {
     // Perform cleanup in a transaction
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: any) => {
       // 1. Delete notifications
       await tx.notification.deleteMany({ where: { userId } });
 
