@@ -79,7 +79,7 @@ export async function getUnreadCountsPerBoard() {
     }
   });
 
-  return counts.reduce((acc, curr) => {
+  return counts.reduce((acc: any, curr: any) => {
     if (curr.boardId) {
       acc[curr.boardId] = curr._count._all;
     }
