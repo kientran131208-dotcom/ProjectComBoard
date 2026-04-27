@@ -28,7 +28,7 @@ interface PostCardProps {
   onSelect: (id: string) => void;
   onTogglePin: (id: string) => void;
   onUpdateTransform: (id: string, transform: { x?: number, y?: number, rotation?: number, scale?: number }) => void;
-  onUpdatePost: (id: string, data: { title?: string, content?: string }) => void;
+  onUpdatePost: (id: string, data: { title?: string, content?: string, status?: "OPEN" | "IN_PROGRESS" | "DONE" }) => void;
   onVotePoll: (postId: string, option: string) => void;
 }
 
