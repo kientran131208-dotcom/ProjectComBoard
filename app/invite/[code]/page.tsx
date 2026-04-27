@@ -28,7 +28,7 @@ export default async function InvitePage({
       where: {
         boardId_userId: {
           boardId: board.id,
-          userId: session.user.id,
+          userId: session.user.id as string,
         }
       }
     });
@@ -38,7 +38,7 @@ export default async function InvitePage({
   const handleJoin = async () => {
     "use server";
     
-    if (!session?.user) {
+    if (!session?.user?.id) {
       redirect(`/login?callbackUrl=/invite/${code}`);
     }
 
@@ -49,7 +49,7 @@ export default async function InvitePage({
       where: {
         boardId_userId: {
           boardId: joinedBoard.id,
-          userId: session.user.id,
+          userId: session.user.id as string,
         }
       }
     });
