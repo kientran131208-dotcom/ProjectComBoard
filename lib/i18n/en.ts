@@ -249,6 +249,7 @@ export const en = {
     unknownError: "Unknown",
     saveChanges: "Save Changes",
     close: "Close",
+    loading: "Loading...",
     confirmDeleteBoard: "Are you sure you want to delete board {name}?",
     deleteBoardWarning: "This action will permanently delete all notices and members in the board.",
     leaveBoard: "Leave Board",

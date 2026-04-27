@@ -249,6 +249,7 @@ export const vi = {
     unknownError: "Không xác định",
     saveChanges: "Lưu thay đổi",
     close: "Đóng",
+    loading: "Đang tải...",
     confirmDeleteBoard: "Bạn có chắc chắn muốn xóa bảng {name} không?",
     deleteBoardWarning: "Hành động này sẽ xóa vĩnh viễn tất cả thông báo và thành viên trong bảng.",
     leaveBoard: "Rời khỏi bảng",
