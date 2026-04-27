@@ -35,8 +35,8 @@ export default function ProfileClient({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  const adminBoards = myBoards.filter((b: any) => b.members?.[0]?.role === \"ADMIN\");
-  const memberBoards = myBoards.filter((b: any) => b.members?.[0]?.role === \"MEMBER\");
+  const adminBoards = myBoards.filter((b: any) => b.members?.[0]?.role === "ADMIN");
+  const memberBoards = myBoards.filter((b: any) => b.members?.[0]?.role === "MEMBER");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

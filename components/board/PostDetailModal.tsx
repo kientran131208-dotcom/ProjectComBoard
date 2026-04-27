@@ -176,7 +176,7 @@ export default function PostDetailModal({
         title: editTitle.trim() || post.title, 
         content: editContent.trim() || post.content,
         status: editStatus,
-        ...(post.type === \"POLL\" ? { pollOptions: editPollOptions.filter((o: any) => o.trim() !== '') } : {})
+        ...(post.type === "POLL" ? { pollOptions: editPollOptions.filter((o: any) => o.trim() !== '') } : {})
       });
     }
     setIsEditing(false);
@@ -589,7 +589,7 @@ export default function PostDetailModal({
             {post.likes && post.likes.length > 0 && (
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-4">
-                  <div className=\"flex -space-x-3 overflow-hidden p-1\">
+                  <div className="flex -space-x-3 overflow-hidden p-1">
                     {post.likes.slice(0, 5).map((like: any, i: number) => (
                       <div 
                         key={like.userId} 

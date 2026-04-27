@@ -65,7 +65,7 @@ export default function CreatePostModal({
         content: finalContent,
         image: formData.image || undefined,
         link: formData.link || undefined,
-        pollOptions: mode === \"POLL\" ? pollOptions.filter((o: any) => o.trim() !== \"\") : undefined,
+        pollOptions: mode === "POLL" ? pollOptions.filter((o: any) => o.trim() !== "") : undefined,
         type: mode === "POLL" ? "POLL" : formData.type,
         status: formData.status,
         x: initialX,
@@ -138,7 +138,7 @@ export default function CreatePostModal({
                 </div>
 
                 <div className="space-y-3">
-                  <label className=\"block text-xs font-black uppercase text-[#1A1A2E] mb-2 tracking-widest text-[#F24236]\">{t.modals.createPost.options}</label>
+                  <label className="block text-xs font-black uppercase text-[#1A1A2E] mb-2 tracking-widest text-[#F24236]">{t.modals.createPost.options}</label>
                   {pollOptions.map((option: any, idx: number) => (
                     <div key={idx} className="flex gap-2">
                       <input 
@@ -337,8 +337,8 @@ export default function CreatePostModal({
             <div className="flex gap-2">
               {[
                 { value: "OPEN", label: t.status.waiting },
-                { value: \"IN_PROGRESS\", label: t.status.inProgress },
-                { value: \"DONE\", label: t.status.completed }
+                { value: "IN_PROGRESS", label: t.status.inProgress },
+                { value: "DONE", label: t.status.completed }
               ].map((s: any) => (
                 <button
                   key={s.value}
@@ -369,9 +369,9 @@ export default function CreatePostModal({
             onClick={handleSubmit}
             disabled={loading || 
               (mode === "ANNOUNCEMENT" && (!formData.title || !formData.content)) || 
-              (mode === \"IMAGE\" && !formData.image) || 
-              (mode === \"LINK\" && !formData.link) || 
-              (mode === \"POLL\" && (!formData.title || pollOptions.filter((o: any) => o.trim() !== \"\").length < 2))}
+              (mode === "IMAGE" && !formData.image) || 
+              (mode === "LINK" && !formData.link) || 
+              (mode === "POLL" && (!formData.title || pollOptions.filter((o: any) => o.trim() !== "").length < 2))}
             className="bg-[#b71212] border-2 border-black px-8 py-3 text-white font-headline font-bold text-sm shadow-[4px_4px_0_0_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 hover:bg-[#a00f0f] disabled:opacity-50 disabled:grayscale"
           >
             {loading ? <RefreshCcw className="animate-spin" size={18} /> : 
