@@ -29,7 +29,7 @@ export default async function BoardPage({
   }
 
   const friends = await getFriends();
-  const friendIds = friends.map(f => f.id);
+  const friendIds = friends.map((f: any) => f.id);
 
   return <BoardClient board={board} currentUserId={session?.user?.id || null} friendIds={friendIds} />;
 }
