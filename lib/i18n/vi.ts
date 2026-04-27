@@ -374,6 +374,7 @@ export const vi = {
     friendsCount: "Bạn bè",
     communitiesTab: "Cộng đồng",
     friendsTab: "Bạn bè",
+    boardsTab: "Bảng tin",
     managedTitle: "Cộng đồng tôi quản lý",
     memberTitle: "Thành viên cộng đồng",
     noManaged: "Bạn chưa quản lý bảng nào.",

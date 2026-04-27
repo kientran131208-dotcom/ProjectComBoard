@@ -374,6 +374,7 @@ export const en = {
     friendsCount: "Friends",
     communitiesTab: "Communities",
     friendsTab: "Friends",
+    boardsTab: "Boards",
     managedTitle: "Communities I Manage",
     memberTitle: "Community Member",
     noManaged: "You don't manage any boards yet.",
